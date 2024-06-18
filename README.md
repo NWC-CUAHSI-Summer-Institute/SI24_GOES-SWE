@@ -1,10 +1,12 @@
+![team_logo](./image/team_logo.webp)
+
 # Introduction
 
-This repository represents the "Investigating SWE Predictive Capability Using GOES Bands and Convolutional Neural Network" project. This project aims to leverage Geostationary Operational Environmental Satellites (GOES) data to make spatial predictions of Snow Water Equivalent (SWE) in the Southern Sierra Nevada mountains. By employing Convolutional Neural Networks (CNNs), we analyze big satellite datasets to generate these predictions. This repository includes all necessary code for downloading and processing data, model development, and evaluation.
+This repository represents the **"Investigating SWE Predictive Capability Using GOES Bands and Convolutional Neural Network"** project. This project aims to leverage Geostationary Operational Environmental Satellites (GOES) data to make spatial predictions of Snow Water Equivalent (SWE) in the Southern Sierra Nevada mountains. By employing Convolutional Neural Networks (CNNs), we analyze big satellite datasets to generate these predictions. This repository includes all necessary code for downloading and processing data, model development, and evaluation.
 
 # Installation
 
-To use this repository, please clone it and install the required packages using the requirements.yml file with the code below:
+To use this repository, please clone it and install the required packages using the *requirements.yml* file with the code below:
 
 ```
 git clone https://github.com/NWC-CUAHSI-Summer-Institute/SI24_GOES-SWE.git
