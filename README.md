@@ -2,7 +2,7 @@
 
 # Introduction
 
-This repository represents the **"Investigating SWE Predictive Capability Using GOES Bands and Convolutional Neural Network"** project. This project aims to leverage Geostationary Operational Environmental Satellites (GOES) data to make spatial predictions of Snow Water Equivalent (SWE) in the Southern Sierra Nevada mountains. By employing Convolutional Neural Networks (CNNs), we analyze big satellite datasets to generate these predictions. This repository includes all necessary code for downloading and processing data, model development, and evaluation.
+This repository represents the **"Investigating SWE Predictive Capability Using GOES Bands and Convolutional Neural Network"** project. This project aims to leverage Geostationary Operational Environmental Satellite (GOES) data to make spatial predictions of snow water equivalent (SWE) in the southern Sierra Nevada mountains. By employing Convolutional Neural Networks (CNNs), we analyze visual and infrared satellite imagery to generate these predictions. This repository includes all necessary code for downloading and processing data, model development, and evaluation.
 
 # Installation
 
@@ -28,6 +28,6 @@ python -m ipykernel install --user --name=goes_kernel
 
 # Background
 
-The Southern Sierra Nevada SWE is a major source of streamflow for water resources management in California. Accurate SWE data is critical for making precise streamflow predictions, which assist water planners in water allocation decisions. Ground observation data, such as the SNOTEL datasets, are limited to specific locations, creating a need for accurate spatial predictions in areas without SNOTEL sites.
+Southern Sierra Nevada snowpack is a major source of spring streamflow in California. Precise measurements of SWE are critical for making accurate streamflow predictions year to year, which assist water management agencies in their decision making. Ground observations, such as those provided by SNOTEL stations, are limited to a small number of point source locations. Thus, this creates a need for more representative spatial predictions of SWE in areas without SNOTEL sites.
 
-Various studies have developed models using different inputs, such as observational and satellite data, to predict SWE in various regions of the US. The GOES satellite is a potential source of valuable information, but it has been underutilized in the past. This project aims to assess the feasibility of using GOES data across the contiguous United States (CONUS) as inputs to a CNN model for predicting SWE in different locations.
+Previous studies have developed models using observational and satellite data to predict SWE in various regions of the US, however, data from the GOES satellite has been underutilized in the past and remains a potential source of valuable information. This project aims to assess the feasibility of assimilating GOES imagery across the contiguous United States (CONUS) as inputs to a CNN model for predicting SWE in high elevation mountainous regions.
