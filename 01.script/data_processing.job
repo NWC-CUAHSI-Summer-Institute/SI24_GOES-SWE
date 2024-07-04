@@ -1,0 +1,49 @@
+#!/bin/bash
+#
+#SBATCH --job-name=DataProcessing
+#SBATCH --output=DataProcessing-%J.log
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --partition=normal
+#SBATCH --time=6-23:00:00
+#SBATCH --cpus-per-task=20
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=snaserneisary@crimson.ua.edu
+#SBATCH --mem=100G  # Request 100 GB of memory
+
+## Printing information about the Slurm Job
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+echo "Name of the cluster on which the job is executing." $SLURM_CLUSTER_NAME
+echo "Number of tasks to be initiated on each node." $SLURM_TASKS_PER_NODE
+echo "Number of cpus requested per task." $SLURM_CPUS_PER_TASK
+echo "Number of CPUS on the allocated node." $SLURM_CPUS_ON_NODE
+echo "Total number of processes in the current job." $SLURM_NTASKS
+echo "List of nodes allocated to the job" $SLURM_NODELIST
+echo "Total number of nodes in the job's resource allocation." $SLURM_NNODES
+echo "List of allocated GPUs." $CUDA_VISIBLE_DEVICES
+
+## Load any module that you need
+echo "Load any module that you need"
+module load Anaconda3
+
+## Moving to the folder containg the code
+echo "Moving to the folder containg the code"
+cd /home/snaserneisary/01.projects/05.summer_institute/
+
+## Run any spacific environment you have
+echo "Run any spacific environment you have"
+source activate /home/snaserneisary/snaserneisary/.conda/envs/goes_data_preparation
+
+## Set environment variables to be used in Python script
+echo "Getting the variables"
+export BAND=2
+export YEAR=2022
+export RESAMPLE=False
+export WRITEPATH='/home/shared/GOES_DA/stacked_all/'
+export RESAMPLETIME=D
+
+## Run Python Script
+echo "Run Python Script"
+time python data_processing.py
+
+echo "After run"
