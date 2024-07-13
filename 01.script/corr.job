@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-#SBATCH --job-name=DataProcessing
-#SBATCH --output=/home/snaserneisary/DataProcessing-%J.log
+#SBATCH --job-name=CorrelationAnalysis
+#SBATCH --output=/home/snaserneisary/correlation-%J.log
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --partition=normal
@@ -9,7 +9,7 @@
 #SBATCH --cpus-per-task=20
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=snaserneisary@crimson.ua.edu
-#SBATCH --mem=300G  # Request 100 GB of memory
+
 
 ## Printing information about the Slurm Job
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
@@ -36,14 +36,16 @@ source activate /home/snaserneisary/snaserneisary/.conda/envs/goes_data_preparat
 
 ## Set environment variables to be used in Python script
 echo "Getting the variables"
-export BAND=2
-export YEAR=2022
-export RESAMPLE=False
-export WRITEPATH='/home/shared/GOES_DA/stacked_all/new/'
+export BAND=5
+export YEAR=2023
+export RESAMPLE=True
+export WRITEPATH='/home/snaserneisary/01.projects/05.summer_institute/SI24_GOES-SWE/03.output/02.correlation_results/'
 export RESAMPLETIME=D
+export SUBSET=False
+export READPATH='/home/shared/GOES_DA/stacked_all/'
 
 ## Run Python Script
 echo "Run Python Script"
-time python data_processing.py
+time python corr.py
 
 echo "After run"
