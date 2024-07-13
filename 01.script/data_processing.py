@@ -48,7 +48,7 @@ def data_stack(year=None, band=None, write_path=None, read_path=None, resample=F
     combined_rad_list = []
 
     # Loop through each day folder
-    for day_folder in tqdm(os.listdir(parent_folder_path)):
+    for day_folder in tqdm(os.listdir(parent_folder_path)[:180]):
         day_folder_path = os.path.join(parent_folder_path, day_folder)
         print(day_folder)
         
